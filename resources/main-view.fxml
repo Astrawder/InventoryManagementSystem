@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox fx:id="mainForm" alignment="CENTER" minHeight="350.0" minWidth="900.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.inventorymanagementsystem.MainController">
+   <children>
+      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="200.0" minWidth="375.0" prefHeight="200.0" prefWidth="375.0" spacing="20.0">
+         <children>
+            <Label alignment="TOP_LEFT" text="Inventory Management System">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets right="165.0" />
+               </VBox.margin>
+            </Label>
+            <BorderPane prefHeight="300.0" prefWidth="350.0" style="-fx-border-color: Black; -fx-border-radius: 8, 8,  0, 0;" VBox.vgrow="NEVER">
+               <center>
+                  <TableView fx:id="partTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <columns>
+                      <TableColumn fx:id="partIDColumn" editable="false" prefWidth="47.0" resizable="false" text="Part ID" />
+                      <TableColumn fx:id="partNameColumn" editable="false" prefWidth="75.0" resizable="false" text="Part Name" />
+                        <TableColumn fx:id="partInvColumn" editable="false" prefWidth="94.0" resizable="false" text="Inventory Level" />
+                        <TableColumn fx:id="partPCColumn" editable="false" prefWidth="116.0" resizable="false" text="Price/Cost per Unit" />
+                    </columns>
+                     <BorderPane.margin>
+                        <Insets bottom="5.0" left="10.0" right="5.0" />
+                     </BorderPane.margin>
+                  </TableView>
+               </center>
+               <bottom>
+                  <HBox prefHeight="30.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#onAddPartButtonClick" text="Add">
+                           <HBox.margin>
+                              <Insets left="155.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#onModifyPartButtonClick" text="Modify" />
+                        <Button mnemonicParsing="false" onAction="#onDeletePartButtonClick" text="Delete" />
+                     </children>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                  </HBox>
+               </bottom>
+               <top>
+                  <HBox prefHeight="30.0" prefWidth="200.0" spacing="120.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label text="Parts">
+                           <HBox.margin>
+                              <Insets left="20.0" top="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="partSearch" onKeyTyped="#onSearchPartInput" promptText="Search by Part ID or Name">
+                           <HBox.margin>
+                              <Insets top="7.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                  </HBox>
+               </top>
+               <VBox.margin>
+                  <Insets bottom="30.0" left="25.0" />
+               </VBox.margin>
+            </BorderPane>
+         </children>
+         <HBox.margin>
+            <Insets bottom="20.0" />
+         </HBox.margin>
+      </VBox>
+      <VBox alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="200.0" minWidth="375.0" prefHeight="200.0" prefWidth="375.0" spacing="15.0">
+         <children>
+            <BorderPane prefHeight="300.0" prefWidth="350.0" style="-fx-border-color: Black; -fx-border-radius: 8, 8, 0, 0;" VBox.vgrow="NEVER">
+               <center>
+                  <TableView fx:id="productTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <columns>
+                      <TableColumn fx:id="productIDColumn" editable="false" prefWidth="69.0" resizable="false" text="Product ID" />
+                      <TableColumn fx:id="productNameColumn" editable="false" minWidth="0.0" prefWidth="89.0" resizable="false" text="Product Name" />
+                        <TableColumn fx:id="productInvColumn" editable="false" prefWidth="95.0" resizable="false" text="Inventory Level" />
+                        <TableColumn fx:id="productPCColumn" editable="false" prefWidth="79.0" resizable="false" text="Price/Cost per Unit" />
+                    </columns>
+                     <BorderPane.margin>
+                        <Insets bottom="5.0" left="10.0" right="5.0" />
+                     </BorderPane.margin>
+                  </TableView>
+               </center>
+               <bottom>
+                  <HBox prefHeight="30.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#onAddProductButtonClick" text="Add">
+                           <HBox.margin>
+                              <Insets left="155.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#onModifyProductButtonClick" text="Modify" />
+                        <Button mnemonicParsing="false" onAction="#onDeleteProductButtonClick" text="Delete" />
+                     </children>
+                  </HBox>
+               </bottom>
+               <top>
+                  <HBox prefHeight="30.0" prefWidth="200.0" spacing="101.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label text="Products">
+                           <HBox.margin>
+                              <Insets left="20.0" top="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="productSearch" onKeyTyped="#onSearchProductInput" promptText="Search by Product ID or Name">
+                           <HBox.margin>
+                              <Insets top="7.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </top>
+               <VBox.margin>
+                  <Insets right="25.0" top="40.0" />
+               </VBox.margin>
+            </BorderPane>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onExitButtonClick" text="Exit" textAlignment="RIGHT">
+               <VBox.margin>
+                  <Insets right="80.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <HBox.margin>
+            <Insets bottom="10.0" left="50.0" />
+         </HBox.margin>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" top="25.0" />
+   </padding>
+</HBox>

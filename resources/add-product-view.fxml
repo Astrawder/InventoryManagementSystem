@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<HBox alignment="CENTER" fillHeight="false" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.inventorymanagementsystem.AddProductController">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-border-color: Black; -fx-border-radius: 8, 8, 0, 0; -fx-border-insets: 20, 0, 0, 0;" HBox.hgrow="NEVER">
+         <children>
+            <Label layoutX="61.0" layoutY="47.0" text="Add Product">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="87.0" layoutY="170.0" text="Name" />
+            <Label layoutX="87.0" layoutY="222.0" prefWidth="32.0" text="Inv" />
+            <Label layoutX="87.0" layoutY="273.0" prefWidth="32.0" text="Price" />
+            <Label layoutX="87.0" layoutY="321.0" prefWidth="32.0" text="Max" />
+            <Label layoutX="87.0" layoutY="119.0" prefWidth="32.0" text="ID" />
+            <Label layoutX="231.0" layoutY="321.0" prefWidth="32.0" text="Min" />
+            <TableView fx:id="partTable" layoutX="490.0" layoutY="84.0" prefHeight="164.0" prefWidth="367.0">
+              <columns>
+                <TableColumn fx:id="partIDColumn" editable="false" prefWidth="63.0" resizable="false" text="Part ID" />
+                <TableColumn fx:id="partNameColumn" editable="false" resizable="false" text="Part Name" />
+                  <TableColumn fx:id="partInvColumn" editable="false" prefWidth="102.0" resizable="false" text="Inventory Level" />
+                  <TableColumn fx:id="partPCColumn" editable="false" prefWidth="121.0" resizable="false" text="Price/ Cost per Unit" />
+              </columns>
+            </TableView>
+            <Button layoutX="760.0" layoutY="269.0" mnemonicParsing="false" onAction="#onAddButtonClick" text="Add" />
+            <TableView fx:id="associatedPartTable" layoutX="490.0" layoutY="316.0" prefHeight="164.0" prefWidth="367.0">
+              <columns>
+                <TableColumn fx:id="associatedIDColumn" editable="false" prefWidth="65.0" resizable="false" text="Part ID" />
+                <TableColumn fx:id="associatedNameColumn" editable="false" prefWidth="76.0" resizable="false" text="Part Name" />
+                  <TableColumn fx:id="associatedInvColumn" editable="false" prefWidth="105.0" resizable="false" text="Inventory Level" />
+                  <TableColumn fx:id="associatedPCColumn" editable="false" prefWidth="120.0" resizable="false" text="Price/ Cost per Unit" />
+              </columns>
+            </TableView>
+            <Button layoutX="686.0" layoutY="498.0" mnemonicParsing="false" onAction="#onRemoveAssociatedPartButtonClick" prefHeight="25.0" prefWidth="149.0" text="Remove Associated Part" />
+            <Button layoutX="686.0" layoutY="537.0" mnemonicParsing="false" onAction="#onSaveButtonClick" text="Save" />
+            <Button layoutX="783.0" layoutY="537.0" mnemonicParsing="false" onAction="#onCancelButtonClick" text="Cancel" />
+            <TextField fx:id="partSearch" layoutX="701.0" layoutY="45.0" onKeyTyped="#onSearchPartInput" prefHeight="25.0" prefWidth="156.0" promptText="Search by Part ID or Name" />
+            <TextField editable="false" layoutX="137.0" layoutY="115.0" promptText="Auto Gen - Disabled" />
+            <TextField fx:id="nameField" layoutX="137.0" layoutY="166.0" prefHeight="25.0" prefWidth="149.0" />
+            <TextField fx:id="invField" layoutX="137.0" layoutY="218.0" prefHeight="25.0" prefWidth="84.0" />
+            <TextField fx:id="pcField" layoutX="137.0" layoutY="269.0" prefHeight="25.0" prefWidth="84.0" />
+            <TextField fx:id="maxField" layoutX="137.0" layoutY="317.0" prefHeight="25.0" prefWidth="84.0" />
+            <TextField fx:id="minField" layoutX="275.0" layoutY="317.0" prefHeight="25.0" prefWidth="84.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>
